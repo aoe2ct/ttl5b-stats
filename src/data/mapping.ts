@@ -8,6 +8,7 @@ export const acceptableMisnamedMaps = {
     "WW - Boundary Brawl": "WWC2 Boundary Brawl v3",
     "WW - Mired": "WWC2 Mired v3",
     "WW - Golden Hill": "WWC2 Golden Hill v4",
+    "Tripel3 - Nomad": "WWC2 Nomad v3",
 };
 export const mapDraftNameToGameNameMapping = {
     "boundary-brawl": "WWC2 Boundary Brawl v3",
