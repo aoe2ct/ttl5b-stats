@@ -1,22 +1,22 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Wandering Warriors Community Cup in Stats',
+  title: 'T90 Titans League Community Cup in Stats',
   tagline: 'Dinosaurs are cool',
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://kjir.github.io',
+  url: 'https://aoe2ct.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/wwcc-stats/',
+  baseUrl: '/ttlc-stats/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Kjir', // Usually your GitHub org/user name.
-  projectName: 'wwcc-stats', // Usually your repo name.
+  organizationName: 'aoe2ct', // Usually your GitHub org/user name.
+  projectName: 'ttlc-stats', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,7 +46,7 @@ const config: Config = {
     // Replace with your project's social card
     defaultMode: 'dark',
     navbar: {
-      title: 'Wandering Warriors Community Cup in Stats',
+      title: 'T90 Titans League Community Cup in Stats',
       // logo: {
       //   alt: 'My Site Logo',
       //   src: 'img/logo.svg',

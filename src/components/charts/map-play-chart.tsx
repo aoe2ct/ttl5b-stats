@@ -6,11 +6,11 @@ import { merge } from 'lodash-es';
 import { Filter } from "../filter/filter-dialog";
 import { FilterLegendConfig } from "@site/src/utils/civ-chart-config";
 
-export default function MapPlayChart({gamesData, filter}: {gamesData: any[], filter: Filter}): JSX.Element {
+export default function MapPlayChart({ gamesData, filter }: { gamesData: any[], filter: Filter }): JSX.Element {
     useDelayedColorMode();
-    const mapData: {[key: string]: number} = gamesData.reduce(
+    const mapData: { [key: string]: number } = gamesData.reduce(
         (acc, game) => {
-            const mapName =  acceptableMisnamedMaps[game.map] ?? game.map;
+            const mapName = acceptableMisnamedMaps[game.map] ?? game.map;
             if (acc.hasOwnProperty(mapName)) {
                 acc[mapName] = acc[mapName] + 1;
             } else {
@@ -18,7 +18,7 @@ export default function MapPlayChart({gamesData, filter}: {gamesData: any[], fil
             }
             return acc;
         },
-        {},
+        Object.fromEntries(Object.keys(GameNameMappingToDisplayName).map(map_name => [map_name, 0])),
     );
     const data = [];
     const keys = [];
@@ -26,11 +26,13 @@ export default function MapPlayChart({gamesData, filter}: {gamesData: any[], fil
         data.push(value);
         keys.push(GameNameMappingToDisplayName[key]);
     }
-    
+
     const style = getComputedStyle(document.body);
-    const options = merge(MapChartConfig(style), FilterLegendConfig(style, filter, false), {plugins: {
-        title: {display: true, text: 'Maps played'},
-        plugins: {tooltip: {enables: true}},
-    }});
-    return <Chart data={{datasets: [{data: data}], labels: keys}} options={options}></Chart>;
+    const options = merge(MapChartConfig(style), FilterLegendConfig(style, filter, false), {
+        plugins: {
+            title: { display: true, text: 'Maps played' },
+            plugins: { tooltip: { enables: true } },
+        }
+    });
+    return <Chart data={{ datasets: [{ data: data }], labels: keys }} options={options}></Chart>;
 };

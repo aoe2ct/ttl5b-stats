@@ -20,12 +20,13 @@ export default function MapPickChart({ draftsData, filter }: { draftsData: { map
             }
             return acc;
         },
-        {},
+        Object.fromEntries(Object.keys(mapDraftNameToGameNameMapping).map(map_name => [map_name, { admin: 0, player: 0 }])),
     );
     const player_data = [];
     const admin_data = [];
     const keys = [];
     for (const [key, value] of Object.entries(draftPickData).sort(([k, a], [ka, b]) => b.admin + b.player - a.admin - a.player)) {
+        console.log(key, value);
         player_data.push(value.player);
         admin_data.push(value.admin);
         keys.push(GameNameMappingToDisplayName[mapDraftNameToGameNameMapping[key]]);
