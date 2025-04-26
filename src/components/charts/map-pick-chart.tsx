@@ -26,7 +26,6 @@ export default function MapPickChart({ draftsData, filter }: { draftsData: { map
     const admin_data = [];
     const keys = [];
     for (const [key, value] of Object.entries(draftPickData).sort(([k, a], [ka, b]) => b.admin + b.player - a.admin - a.player)) {
-        console.log(key, value);
         player_data.push(value.player);
         admin_data.push(value.admin);
         keys.push(GameNameMappingToDisplayName[mapDraftNameToGameNameMapping[key]]);

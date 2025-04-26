@@ -10,7 +10,10 @@ export default function MapPlayChart({ gamesData, filter }: { gamesData: any[], 
     useDelayedColorMode();
     const mapData: { [key: string]: number } = gamesData.reduce(
         (acc, game) => {
-            const mapName = acceptableMisnamedMaps[game.map] ?? game.map;
+            const mapName: string = acceptableMisnamedMaps[game.map] ?? game.map;
+            if (!GameNameMappingToDisplayName[mapName]) {
+                console.log("Unknown Map:", mapName);
+            }
             if (acc.hasOwnProperty(mapName)) {
                 acc[mapName] = acc[mapName] + 1;
             } else {

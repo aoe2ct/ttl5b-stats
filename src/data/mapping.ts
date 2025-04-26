@@ -2,7 +2,8 @@ export const acceptableMisnamedMaps = {
     "HLL2 Rocky Forest": "TTL4 Rocky Forest v3",
     "TCC Fortified Clearing": "TTL4 Fortified Clearing v2",
     "SPEC Dzong": "TTL4 Dzong v3",
-    "Pacific Islands": "TTL4 Pacific Islands v3"
+    "Pacific Islands": "TTL4 Pacific Islands v3",
+    "SPEC Ravines": "TTL4 Ravines v1",
 };
 export const mapDraftNameToGameNameMapping = {
     "acropolis": "TTL4 Acropolis v3",
