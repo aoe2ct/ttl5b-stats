@@ -7,7 +7,7 @@ import { allCivs } from "@site/src/data/mapping";
 
 export default function CivBanChart({ draftsData, filter }: { draftsData: { civDrafts: any[] }, filter: Filter }): JSX.Element {
     useDelayedColorMode();
-    const baseDraftData: { [key: string]: number } = Object.fromEntries(allCivs.map((civ) => [civ, 0]));
+    const baseDraftData: { [key: string]: { player: number, admin: number } } = Object.fromEntries(allCivs.map((civ) => [civ, { player: 0, admin: 0 }]));
     const draftPickData: { [key: string]: { player: number, admin: number } } = {
         ...baseDraftData,
         ...draftsData.civDrafts.reduce(

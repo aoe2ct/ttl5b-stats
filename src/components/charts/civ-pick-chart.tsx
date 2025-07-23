@@ -7,17 +7,21 @@ import { allCivs } from "@site/src/data/mapping";
 
 export default function CivPickChart({ draftsData, filter }: { draftsData: { civDrafts: any[] }, filter: Filter }): JSX.Element {
     useDelayedColorMode();
-    const baseDraftData: { [key: string]: number } = Object.fromEntries(allCivs.map((civ) => [civ, 0]));
-    const draftPickData: { [key: string]: number } = {
+    const baseDraftData: { [key: string]: { pick: number, snipe: number } } = Object.fromEntries(allCivs.map((civ) => [civ, { pick: 0, snipe: 0 }]));
+    const draftPickData: { [key: string]: { pick: number, snipe: number } } = {
         ...baseDraftData,
         ...draftsData.civDrafts.reduce(
             (acc, draft) => {
-                const mapPicks = draft.draft.filter(v => v.action === 'pick').map(v => v.map);
-                for (const pick of mapPicks) {
-                    if (acc.hasOwnProperty(pick)) {
-                        acc[pick] = acc[pick] + 1;
+                const picks = draft.draft.filter(v => ['pick', 'snipe'].includes(v.action));
+                for (const pick of picks) {
+                    if (!acc.hasOwnProperty(pick.map)) {
+                        acc[pick.map] = { pick: 0, snipe: 0 };
+                    }
+                    if (pick.action == 'snipe') {
+                        acc[pick.map]['pick'] -= 1;
+                        acc[pick.map]['snipe'] += 1;
                     } else {
-                        acc[pick] = 1;
+                        acc[pick.map]['pick'] += 1;
                     }
                 }
                 return acc;
@@ -25,26 +29,44 @@ export default function CivPickChart({ draftsData, filter }: { draftsData: { civ
             {},
         )
     };
-    const data = [];
+    const pick_data = [];
+    const snipe_data = [];
     const keys = [];
-    for (const [key, value] of Object.entries(draftPickData).sort(([_ka, a], [_kb, b]) => b - a)) {
-        data.push(value);
+    for (const [key, value] of Object.entries(draftPickData).sort(([_ka, a], [_kb, b]) => b.pick + b.snipe - a.pick - a.snipe)) {
+        pick_data.push(value.pick);
+        snipe_data.push(value.snipe);
         keys.push(key);
     }
 
     const style = getComputedStyle(document.body);
-    const options = merge(CivChartConfig(style, data), FilterLegendConfig(style, filter, false), {
+    const options = merge(CivChartConfig(style, pick_data), FilterLegendConfig(style, filter, false), {
         plugins: {
             title: { display: true, text: 'Civilization picks' },
             tooltip: { enables: true },
+        },
+        scale: {
+            x: {
+                stacked: true
+            },
+            y: {
+                stacked: true
+            }
         }
     });
     return <Chart data={{
         datasets: [{
-            data: data,
-            backgroundColor: data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary') : style.getPropertyValue('--ifm-color-secondary')),
-            borderColor: data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
+            data: pick_data,
+            backgroundColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary') : style.getPropertyValue('--ifm-color-secondary')),
+            borderColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
             borderWidth: 2,
+            label: "Picks"
+        },
+        {
+            data: snipe_data,
+            backgroundColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-darkest') : style.getPropertyValue('--ifm-color-secondary-darkest')),
+            borderColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
+            borderWidth: 2,
+            label: "Snipes"
         }], labels: keys
     }} options={options}></Chart>;
 };

@@ -91,7 +91,7 @@ export default function FilterDialog(): JSX.Element {
                 {Object.entries(BracketNameToImage).map(([bracketName, bracketImage]) =>
                     <FilterBracketItem
                         key={bracketName}
-                        imageSrc={bracketImage ? useBaseUrl('/img/brackets/Champion.webp') : undefined}
+                        imageSrc={bracketImage ? useBaseUrl(bracketImage) : undefined}
                         value={filter.brackets.includes(bracketName)}
                         onChange={onBracketFilterChange.bind(this, bracketName)}
                         name={bracketName} />
