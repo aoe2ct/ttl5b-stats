@@ -59,7 +59,7 @@ export default function CivPickChart({ draftsData, filter }: { draftsData: { civ
             backgroundColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-lightest') : style.getPropertyValue('--ifm-color-secondary-lightest')),
             borderColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
             borderWidth: 1,
-            label: "Successful picks"
+            label: "Picks"
         },
         {
             data: snipe_data,
