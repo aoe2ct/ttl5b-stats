@@ -56,17 +56,17 @@ export default function CivPickChart({ draftsData, filter }: { draftsData: { civ
     return <Chart data={{
         datasets: [{
             data: pick_data,
-            backgroundColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary') : style.getPropertyValue('--ifm-color-secondary')),
+            backgroundColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-lightest') : style.getPropertyValue('--ifm-color-secondary-lightest')),
             borderColor: pick_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
-            borderWidth: 2,
-            label: "Picks"
+            borderWidth: 1,
+            label: "Successful picks"
         },
         {
             data: snipe_data,
             backgroundColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-darkest') : style.getPropertyValue('--ifm-color-secondary-darkest')),
             borderColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
-            borderWidth: 2,
-            label: "Snipes"
+            borderWidth: 1,
+            label: "Sniped picks"
         }], labels: keys
     }} options={options}></Chart>;
 };
