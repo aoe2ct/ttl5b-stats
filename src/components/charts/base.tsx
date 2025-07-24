@@ -45,7 +45,7 @@ export default function Base(): JSX.Element {
             <p>The following charts summarize the data gathered from the drafts.</p>
             <p>This chart is showing the number of times each map was picked during a draft. Note that any map not picked was banned so no separate chart for that.</p>
             <MapPickChart draftsData={filteredDraftsData} filter={filter}></MapPickChart>
-            <p>Next up is civilization picks in the drafts specifically.</p>
+            <p>Next up is civilization picks in the drafts specifically. Each column is divided in picks that were sniped, and picks that weren't. The column height is the overall times the civ was picked.</p>
             <CivPickChart draftsData={filteredDraftsData} filter={filter}></CivPickChart>
             <p>Finally civilization bans.</p>
             <CivBanChart draftsData={filteredDraftsData} filter={filter}></CivBanChart>

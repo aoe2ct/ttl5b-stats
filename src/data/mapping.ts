@@ -29,7 +29,7 @@ export const GameNameMappingToDisplayName = {
 };
 
 export const BracketNameToImage = {
-    Champion: '/img/brackets/Champion.webp',
+    Champions: '/img/brackets/Champion.webp',
     Monks: '/img/brackets/Monk.webp',
     Mangonels: '/img/brackets/Mangonel.webp',
     Knights: '/img/brackets/Knight.webp',

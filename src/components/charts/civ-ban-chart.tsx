@@ -52,10 +52,10 @@ export default function CivBanChart({ draftsData, filter }: { draftsData: { civD
     return <Chart data={{
         datasets: [{
             data: player_data,
-            backgroundColor: player_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary') : style.getPropertyValue('--ifm-color-secondary')),
-            borderColor: player_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
+            backgroundColor: player_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-darkest') : style.getPropertyValue('--ifm-color-secondary-darkest')),
+            borderColor: player_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-light') : style.getPropertyValue('--ifm-color-secondary-light')),
             borderWidth: 2,
-            label: "Player bans"
+            label: "Bans"
         },
         {
             data: admin_data,

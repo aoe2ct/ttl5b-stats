@@ -8,7 +8,7 @@ Chart.register(PointElement);
 type Bracket = keyof typeof BracketNameToImage
 const bracketOrder = Object.keys(BracketNameToImage) as Bracket[];
 const bracketColors: { [bracket in Bracket]: string } = {
-    Champion: "#1f77b4",
+    Champions: "#1f77b4",
     Monks: "#ff7f0e",
     Mangonels: "#2ca02c",
     Knights: "#d62728",
