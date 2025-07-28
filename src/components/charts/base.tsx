@@ -3,6 +3,7 @@ import draftsData from '../../data/drafts.json';
 import { Fragment, useState } from 'react';
 import Chart from './chart';
 import MapPickChart from './map-pick-chart';
+import MapBanChart from './map-ban-chart';
 import CivPickChart from './civ-pick-chart';
 import CivBanChart from './civ-ban-chart';
 import CivPlayChart from './civ-play-chart';
@@ -43,8 +44,10 @@ export default function Base(): JSX.Element {
             }
             <h2>Drafts data</h2>
             <p>The following charts summarize the data gathered from the drafts.</p>
-            <p>This chart is showing the number of times each map was picked during a draft. Note that any map not picked was banned so no separate chart for that.</p>
+            <p>This chart is showing the number of times each map was picked during a draft.</p>
             <MapPickChart draftsData={filteredDraftsData} filter={filter}></MapPickChart>
+            <p>Here we can see which maps have been banned most often by the players.</p>
+            <MapBanChart draftsData={filteredDraftsData} filter={filter}></MapBanChart>
             <p>Next up is civilization picks in the drafts specifically. Each column is divided in picks that were sniped, and picks that weren't. The column height is the overall times the civ was picked.</p>
             <CivPickChart draftsData={filteredDraftsData} filter={filter}></CivPickChart>
             <p>Finally civilization bans.</p>
