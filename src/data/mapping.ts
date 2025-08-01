@@ -1,5 +1,6 @@
 export const acceptableMisnamedMaps = {
     "[ALS13] Koala - RMSC2": "TCC2_Koala",
+    "SDC Sunburn": "TCC2_Sunburn",
 };
 export const mapDraftNameToGameNameMapping = {
     "african-river": "TCC2_African_River",
