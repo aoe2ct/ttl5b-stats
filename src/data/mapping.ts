@@ -94,3 +94,7 @@ export const allCivs = [
     "Wei",
     "Wu"
 ];
+
+export function mapDraftNameToDisplay(draftName: string) {
+    return GameNameMappingToDisplayName[mapDraftNameToGameNameMapping[draftName] ?? draftName] ?? draftName
+}
