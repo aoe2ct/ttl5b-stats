@@ -53,6 +53,10 @@ const config: Config = {
       // },
       items: [
         {
+          to: 'players',
+          label: 'Individual Player stats'
+        },
+        {
           type: 'custom-filterButton',
           position: 'right',
         },
