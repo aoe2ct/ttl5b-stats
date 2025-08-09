@@ -6,27 +6,24 @@ import { merge } from 'lodash-es';
 import { Filter } from "../filter/filter-dialog";
 import { FilterLegendConfig } from "@site/src/utils/civ-chart-config";
 
-export default function PlayerMapDraftChart({ pickCounts, banCounts, filter }: { pickCounts: Record<string, number>, banCounts: Record<string, number>, filter: Filter }): JSX.Element {
+export default function PlayerMapPlayedChart({ winCounts, lossCounts, filter }: { winCounts: Record<string, number>, lossCounts: Record<string, number>, filter: Filter }): JSX.Element {
     useDelayedColorMode();
-    const draftData = Object.fromEntries(Object.values(GameNameMappingToDisplayName).map(map_name => [map_name, { pick: pickCounts[map_name] ?? 0, ban: banCounts[map_name] ?? 0 }]));
-    const pick_data = [];
-    const ban_data = [];
+    const playData = Object.fromEntries(Object.values(GameNameMappingToDisplayName).map(map_name => [map_name, { win: winCounts[map_name] ?? 0, loss: lossCounts[map_name] ?? 0 }]));
+    const win_data = [];
+    const loss_data = [];
     const keys = [];
-    for (const [key, value] of Object.entries(draftData).sort(([k, a], [ka, b]) => {
-        if (a.pick + b.pick > 0) {
-            return b.pick - a.pick;
-        }
-        return b.ban - a.ban;
+    for (const [key, value] of Object.entries(playData).sort(([k, a], [ka, b]) => {
+        return b.win + b.loss - a.win - a.loss;
     })) {
-        pick_data.push(value.pick);
-        ban_data.push(value.ban);
+        win_data.push(value.win);
+        loss_data.push(value.loss);
         keys.push(key);
     }
 
     const style = getComputedStyle(document.body);
     const options = merge(MapChartConfig(style), FilterLegendConfig(style, filter, false), {
         plugins: {
-            title: { display: true, text: 'Maps drafting' },
+            title: { display: true, text: 'Maps played' },
             plugins: { tooltip: { enables: true } },
         },
         scales: {
@@ -41,13 +38,13 @@ export default function PlayerMapDraftChart({ pickCounts, banCounts, filter }: {
     return <Chart data={{
         datasets: [
             {
-                label: 'Picks',
-                data: pick_data,
+                label: 'Victories',
+                data: win_data,
                 backgroundColor: style.getPropertyValue('--ifm-color-primary')
             },
             {
-                label: 'Bans',
-                data: ban_data,
+                label: 'Defeats',
+                data: loss_data,
                 backgroundColor: style.getPropertyValue('--ifm-color-secondary'),
                 borderColor: style.getPropertyValue('--ifm-color-secondary')
             },

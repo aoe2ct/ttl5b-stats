@@ -98,3 +98,14 @@ export const allCivs = [
 export function mapDraftNameToDisplay(draftName: string) {
     return GameNameMappingToDisplayName[mapDraftNameToGameNameMapping[draftName] ?? draftName] ?? draftName
 }
+
+export function mapGameNameToDisplay(gameName: string) {
+    const correctedName = acceptableMisnamedMaps[gameName] ?? gameName;
+    const mapName = GameNameMappingToDisplayName[correctedName];
+    if (!mapName) {
+        console.log("Unknown Map:", mapName);
+        return correctedName;
+    }
+    return mapName;
+
+}
