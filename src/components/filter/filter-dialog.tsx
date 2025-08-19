@@ -19,7 +19,8 @@ export type Filter = {
     },
 };
 
-const allStages = ['Group', 'Quarter finals', 'Semi finals', 'Finals'];
+const winnerStages = ['Group', 'Quarter finals', 'Semi finals', 'Finals'];
+const loserStages = ['Loser\'s Quarter finals', 'Loser\'s Semi finals', 'Loser\'s Finals'];
 
 export default function FilterDialog(): JSX.Element {
     const onClickHandler = (isApplied) => {
@@ -32,7 +33,7 @@ export default function FilterDialog(): JSX.Element {
     const defaultFilter: Filter = {
         maps: Object.keys(GameNameMappingToDisplayName),
         brackets: Object.keys(BracketNameToImage),
-        stages: [...allStages],
+        stages: [...winnerStages],
         appliedFilters: {
             any: false,
             stages: false,
@@ -101,7 +102,7 @@ export default function FilterDialog(): JSX.Element {
             <hr />
             <h2>Stages</h2>
             <div className={styles['map-container']}>
-                {allStages.map(stage =>
+                {[...winnerStages, ...loserStages].map(stage =>
                     <FilterStageItem
                         key={stage}
                         value={filter.stages.includes(stage)}
