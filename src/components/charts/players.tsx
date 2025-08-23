@@ -8,6 +8,7 @@ import PlayerMapPlayedChart from '@site/src/components/charts/player-map-played-
 import PlayerCivPlayedChart from '@site/src/components/charts/player-civ-played-chart';
 import PlayerApmChart from '@site/src/components/charts/player-apm-chart';
 import GameTimeChart from '@site/src/components/charts/game-time-chart';
+import PlayerGamesTable from '@site/src/components/charts/player-games-table';
 
 function countOccurrences(data: Array<string>): Record<string, number> {
     return data.reduce((counts, selection) => {
@@ -145,6 +146,8 @@ export default function Base(): JSX.Element {
             <p>Here is a representation of their eAPM over all the games played</p>
             {/* <p>Who is the fastest player in the tournament? We can see the eAPM over all brackets</p> */}
             <PlayerApmChart eapm={playerStats.eapm} bracket={selectedPlayerData.at(0).bracket}></PlayerApmChart>
+            <h2>{selectedPlayer}'s Games</h2>
+            <PlayerGamesTable games={selectedPlayerData}></PlayerGamesTable>
             {/* <hr></hr> */}
             Thanks for checking out T90 Community Cup 2 in Stats!
         </Fragment>

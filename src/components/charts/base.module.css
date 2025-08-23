@@ -23,6 +23,7 @@
     padding: 0.5rem;
     cursor: pointer;
     white-space: nowrap;
+
     @media screen and (-ms-high-contrast: active) {
         border: 2px solid currentcolor;
     }
@@ -35,4 +36,20 @@
 .player-button.selected button {
     border-style: solid;
     border-color: var(--ifm-color-secondary);
+}
+
+.winner {
+    background-color: #fedf72;
+}
+
+.winner:nth-child(2n) {
+    background-color: #fef4ce;
+}
+
+.loser {
+    background-color: #ffa2a9;
+}
+
+.loser:nth-child(2n) {
+    background-color: #ffd0d3;
 }
