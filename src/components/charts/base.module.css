@@ -53,3 +53,21 @@
 .loser:nth-child(2n) {
     background-color: #ffd0d3;
 }
+
+html[data-theme="dark"] {
+    .winner {
+        background-color: #393010;
+    }
+
+    .winner:nth-child(2n) {
+        background-color: #4a4121;
+    }
+
+    .loser {
+        background-color: #534345;
+    }
+
+    .loser:nth-child(2n) {
+        background-color: #654043;
+    }
+}
