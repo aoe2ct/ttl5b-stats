@@ -39,11 +39,11 @@
 }
 
 .winner {
-    background-color: #fedf72;
+    background-color: #b6f386;
 }
 
 .winner:nth-child(2n) {
-    background-color: #fef4ce;
+    background-color: #e7fbd5;
 }
 
 .loser {
@@ -56,11 +56,11 @@
 
 html[data-theme="dark"] {
     .winner {
-        background-color: #393010;
+        background-color: #243616;
     }
 
     .winner:nth-child(2n) {
-        background-color: #4a4121;
+        background-color: #354627;
     }
 
     .loser {
