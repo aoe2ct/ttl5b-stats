@@ -29,10 +29,6 @@ export default function Base(): JSX.Element {
     const isFilterApplied = gamesData.length !== filteredGamesData.length;
     return (
         <Fragment>
-            <sup className={styles.attributions}>Thanks to Beargwyn for compiling all the data.</sup>
-            <sup className={styles.attributions}>Thanks to Salytmacska for creating the original website.</sup>
-            <p>Welcome to the "T90 Titans League 5 Bronze in Stats" website. This website collects all the statistics you could ever want to know about the tournament in one place!</p>
-            <p>The data, by default summarizes the entire tournament (as of 2025.10.25). Use the filters on the toolbar to view the data pertaining to a particular map or bracket.</p>
             <p>So let's jump in with the most encompassing stats first:</p>
             {
                 isFilterApplied ?
