@@ -1,5 +1,7 @@
 ---
 title: T90 Titans League 5 Bronze in Stats
+description: Statistics for the TTL5 Bronze Age of Empires II tournament hosted by T90Official
+image: /img/brackets/Bronze.webp
 ---
 
 import Chart from '../components/charts/chart.tsx'
