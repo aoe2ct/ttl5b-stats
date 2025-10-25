@@ -1,26 +1,29 @@
 export const acceptableMisnamedMaps = {
     "TTL5B Acropolis v3": "TTL5B Acropolis v1",
     "TTL5B Acropolis v2": "TTL5B Acropolis v1",
+    "TTL4 Cross v2": "TTL5B Cross v1",
     "TTL5B Jungle Swamp v2": "TTL5B Jungle Swamp v1",
     "TTL5B Kilimanjaro v2": "TTL5B Kilimanjaro v1",
     "TTL5B Pacific Islands v3": "TTL5B Pacific Islands v1",
     "TTL5B Pacific Islands v2": "TTL5B Pacific Islands v1",
+    "TTL4 Pacific Islands v3": "TTL5B Pacific Islands v1",
     "TTL5B Ravines v2": "TTL5B Ravines v1",
     "TTL5B Rocky Forest v2": "TTL5B Rocky Forest v1",
+    "TTL4 Rocky Forest v3": "TTL5B Rocky Forest v1",
     "TTL5B Shoals v2": "TTL5B Shoals v1",
 };
 export const mapDraftNameToGameNameMapping = {
-    "african-river": "TCC2_African_River",
-    "badlands": "TCC2_Badlands",
-    "big-freeze": "TCC2_Big_Freeze",
-    "Coast Arena": "TCC2_Coast_Arena",
-    "hoodoo": "TCC2_Hoodoo",
-    "koala": "TCC2_Koala",
-    "le-grand-foss-": "TCC2_Le_grand_Fosse",
-    "Northern Crossings": "TCC2_Northern_Crossings",
-    "roe-rage": "TCC2_Roe_Rage",
-    "sunburn": "TCC2_Sunburn",
-    "Triple Tunnel": "TCC2_Triple_Tunnel",
+    "acropolis": "TTL5B Acropolis v1",
+    "Cross": "TTL5B Cross v1",
+    "dzong": "TTL5B Dzong v1",
+    "evacuation": "TTL5B Evacuation v1",
+    "fortified-clearing": "TTL5B Fortified Clearing v1",
+    "jungle-swamp": "TTL5B Jungle Swamp v1",
+    "kilimanjaro": "TTL5B Kilimanjaro v1",
+    "pacific-islands": "TTL5B Pacific Islands v1",
+    "ravines": "TTL5B Ravines v1",
+    "rocky-forest": "TTL5B Rocky Forest v1",
+    "shoals": "TTL5B Shoals v1",
 };
 
 export const GameNameMappingToDisplayName = {
@@ -38,10 +41,14 @@ export const GameNameMappingToDisplayName = {
 };
 
 export const BracketNameToImage = {
-    // Platinum: '/img/brackets/Champion.webp',
-    // Gold: '/img/brackets/Monk.webp',
-    // Silver: '/img/brackets/Mangonel.webp',
-    Bronze: '/img/brackets/Bronze.webp',
+    "Group A": null,
+    "Group B": null,
+    "Group C": null,
+    "Group D": null,
+    "Group E": null,
+    "Group F": null,
+    "Group G": null,
+    "Group H": null,
 };
 
 export const allCivs = [

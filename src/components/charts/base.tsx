@@ -34,13 +34,15 @@ export default function Base(): JSX.Element {
             <p>Welcome to the "T90 Titans League 5 Bronze in Stats" website. This website collects all the statistics you could ever want to know about the tournament in one place!</p>
             <p>The data, by default summarizes the entire tournament (as of 2025.10.25). Use the filters on the toolbar to view the data pertaining to a particular map or bracket.</p>
             <p>So let's jump in with the most encompassing stats first:</p>
-            {isFilterApplied ?
-                <p>There were <span className={styles['highlighted-text']}>{filteredDraftsData.mapDrafts.length}</span> sets played over the course of the tournmament, that match the selected filters.</p> :
-                <p>There were <span className={styles['highlighted-text']}>{filteredDraftsData.mapDrafts.length}</span> sets played over the course of the tournmament.</p>
+            {
+                isFilterApplied ?
+                    <p>There were <span className={styles['highlighted-text']}>{filteredDraftsData.mapDrafts.length}</span> sets played over the course of the tournmament, that match the selected filters.</p> :
+                    <p>There were <span className={styles['highlighted-text']}>{filteredDraftsData.mapDrafts.length}</span> sets played over the course of the tournmament.</p>
             }
-            {isFilterApplied ?
-                <p>Looking at individual games, there were <span className={styles['highlighted-text']}>{filteredGamesData.length}</span> games played over the course of the tournmament, that match the selected filters.</p> :
-                <p>Looking at individual games, there were <span className={styles['highlighted-text']}>{filteredGamesData.length}</span> games played over the course of the tournmament.</p>
+            {
+                isFilterApplied ?
+                    <p>Looking at individual games, there were <span className={styles['highlighted-text']}>{filteredGamesData.length}</span> games played over the course of the tournmament, that match the selected filters.</p> :
+                    <p>Looking at individual games, there were <span className={styles['highlighted-text']}>{filteredGamesData.length}</span> games played over the course of the tournmament.</p>
             }
             <h2>Drafts data</h2>
             <p>The following charts summarize the data gathered from the drafts.</p>
@@ -65,6 +67,6 @@ export default function Base(): JSX.Element {
             <ApmChart gamesData={gamesData.filter(game => game.map != null)} filter={filter}></ApmChart>
             <hr></hr>
             Thanks for checking out T90 Titans League 5 Bronze in Stats!
-        </Fragment>
+        </Fragment >
     );
 }

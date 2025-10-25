@@ -19,8 +19,8 @@ export type Filter = {
     },
 };
 
-const winnerStages = ['Group', 'Quarter finals', 'Semi finals', 'Finals'];
-const loserStages = ['Loser\'s Quarter finals', 'Loser\'s Semi finals', 'Loser\'s Finals'];
+const winnerStages = ['Round 1', 'Round 2', 'Semifinals', 'Finals'];
+const loserStages = [];
 
 export default function FilterDialog(): JSX.Element {
     const onClickHandler = (isApplied) => {
