@@ -149,7 +149,7 @@ export default function Base(): JSX.Element {
             <h2>{selectedPlayer}'s Games</h2>
             <PlayerGamesTable games={selectedPlayerData}></PlayerGamesTable>
             {/* <hr></hr> */}
-            Thanks for checking out T90 Community Cup 2 in Stats!
+            Thanks for checking out T90 Titans League 5 Bronze in Stats!
         </Fragment>
     );
 }

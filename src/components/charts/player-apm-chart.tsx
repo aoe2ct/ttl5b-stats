@@ -8,15 +8,15 @@ Chart.register(PointElement);
 type Bracket = keyof typeof BracketNameToImage
 const bracketOrder = Object.keys(BracketNameToImage) as Bracket[];
 const bracketColors: { [bracket in Bracket]: string } = {
-    Champions: "#1f77b4",
-    Monks: "#ff7f0e",
-    Mangonels: "#2ca02c",
-    Knights: "#d62728",
-    Pikemen: "#9467bd",
-    Longswords: "#8c564b",
-    Crossbows: "#e377c2",
-    Archers: "#7f7f7f",
-    Militia: "#bcbd22"
+    Bronze: "#1f77b4",
+    // Monks: "#ff7f0e",
+    // Mangonels: "#2ca02c",
+    // Knights: "#d62728",
+    // Pikemen: "#9467bd",
+    // Longswords: "#8c564b",
+    // Crossbows: "#e377c2",
+    // Archers: "#7f7f7f",
+    // Militia: "#bcbd22"
 };
 
 export default function PlayerApmChart({ eapm, bracket }: { eapm: number[], bracket: string }): JSX.Element {

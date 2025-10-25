@@ -1,7 +1,13 @@
 export const acceptableMisnamedMaps = {
-    "[ALS13] Koala - RMSC2": "TCC2_Koala",
-    "SDC Sunburn": "TCC2_Sunburn",
-    "DSC Le Grand Fosse": "TCC2_Le_grand_Fosse",
+    "TTL5B Acropolis v3": "TTL5B Acropolis v1",
+    "TTL5B Acropolis v2": "TTL5B Acropolis v1",
+    "TTL5B Jungle Swamp v2": "TTL5B Jungle Swamp v1",
+    "TTL5B Kilimanjaro v2": "TTL5B Kilimanjaro v1",
+    "TTL5B Pacific Islands v3": "TTL5B Pacific Islands v1",
+    "TTL5B Pacific Islands v2": "TTL5B Pacific Islands v1",
+    "TTL5B Ravines v2": "TTL5B Ravines v1",
+    "TTL5B Rocky Forest v2": "TTL5B Rocky Forest v1",
+    "TTL5B Shoals v2": "TTL5B Shoals v1",
 };
 export const mapDraftNameToGameNameMapping = {
     "african-river": "TCC2_African_River",
@@ -18,29 +24,24 @@ export const mapDraftNameToGameNameMapping = {
 };
 
 export const GameNameMappingToDisplayName = {
-    "TCC2_African_River": "African River",
-    "TCC2_Badlands": "Badlands",
-    "TCC2_Big_Freeze": "Big Freeze",
-    "TCC2_Coast_Arena": "Coast Arena",
-    "TCC2_Hoodoo": "Hoodoo",
-    "TCC2_Koala": "Koala",
-    "TCC2_Le_grand_Fosse": "Le Grand Fossé",
-    "TCC2_Northern_Crossings": "Northern Crossings",
-    "TCC2_Roe_Rage": "Roe Rage",
-    "TCC2_Sunburn": "Sunburn",
-    "TCC2_Triple_Tunnel": "Triple Tunnel",
+    "TTL5B Acropolis v1": "Acropolis",
+    "TTL5B Cross v1": "Cross",
+    "TTL5B Dzong v1": "Dzong",
+    "TTL5B Evacuation v1": "Evacuation",
+    "TTL5B Fortified Clearing v1": "Fortified Clearing",
+    "TTL5B Jungle Swamp v1": "Jungle Swamp",
+    "TTL5B Kilimanjaro v1": "Kilimanjaro",
+    "TTL5B Pacific Islands v1": "Pacific Islands",
+    "TTL5B Ravines v1": "Ravines",
+    "TTL5B Rocky Forest v1": "Rocky Forest",
+    "TTL5B Shoals v1": "Shoals",
 };
 
 export const BracketNameToImage = {
-    Champions: '/img/brackets/Champion.webp',
-    Monks: '/img/brackets/Monk.webp',
-    Mangonels: '/img/brackets/Mangonel.webp',
-    Knights: '/img/brackets/Knight.webp',
-    Pikemen: '/img/brackets/Pikeman.webp',
-    Longswords: '/img/brackets/Longswordsman.webp',
-    Crossbows: '/img/brackets/Crossbowman.webp',
-    Archers: '/img/brackets/Archers.webp',
-    Militia: '/img/brackets/Militia.webp',
+    // Platinum: '/img/brackets/Champion.webp',
+    // Gold: '/img/brackets/Monk.webp',
+    // Silver: '/img/brackets/Mangonel.webp',
+    Bronze: '/img/brackets/Bronze.webp',
 };
 
 export const allCivs = [

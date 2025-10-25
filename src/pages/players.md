@@ -1,5 +1,5 @@
 ---
-title: T90 Community Cup 2 in Stats
+title: T90 Titans League 5 Bronze in Stats
 ---
 
 import Players from '../components/charts/players.tsx'
