@@ -2,6 +2,7 @@ export const acceptableMisnamedMaps = {
     "TTL5B Acropolis v3": "TTL5B Acropolis v1",
     "TTL5B Acropolis v2": "TTL5B Acropolis v1",
     "TTL4 Cross v2": "TTL5B Cross v1",
+    "TTL4 Dzong v3": "TTL5B Dzong v1",
     "TTL4 Evacuation v1": "TTL5B Evacuation v1",
     "TTL4 Fortified Clearing v2": "TTL5B Fortified Clearing v1",
     "TTL5B Jungle Swamp v2": "TTL5B Jungle Swamp v1",
