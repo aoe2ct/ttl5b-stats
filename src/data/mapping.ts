@@ -54,6 +54,7 @@ export const BracketNameToImage = {
     "Group F": null,
     "Group G": null,
     "Group H": null,
+    "Other": null,
 };
 
 export const allCivs = [

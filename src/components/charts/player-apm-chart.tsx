@@ -16,7 +16,7 @@ const bracketColors: { [bracket in Bracket]: string } = {
     "Group F": "#8c564b",
     "Group G": "#e377c2",
     "Group H": "#7f7f7f",
-    // Militia: "#bcbd22"
+    "Other": "#bcbd22"
 };
 
 export default function PlayerApmChart({ eapm, bracket }: { eapm: number[], bracket: string }): JSX.Element {
